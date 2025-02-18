@@ -1,5 +1,5 @@
-git config ---global user.name Eduardo12vieagas
-git config ---global user.email eduardo.vieagas@etec.sp.gov.br
+git config --global user.name Eduardo12vieagas
+git config --global user.email eduardo.vieagas@etec.sp.gov.br
 
 dotnet new sln --name GStore
 dotnet new mvc -o GStore
