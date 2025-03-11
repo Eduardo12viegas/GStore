@@ -9,19 +9,18 @@ public class ProdutoFoto
     [Key]
     public int Id { get; set; }
 
-    [Display(Name = "produto")]
-    [Required(ErrorMessage = "por favor, informe o produto")]
-    public int ProdutoID { get; set; }
+    [Display(Name = "Produto")]
+    [Required(ErrorMessage = "Por favor, informe o Produto")]
+    public int ProdutoId { get; set; }
     [ForeignKey("ProdutoId")]
     public Produto Produto { get; set; }
 
     [Display(Name = "Foto")]
     [StringLength(200)]
-    [Required(ErrorMessage = "por favor, informe o arquivo")]
-
+    [Required(ErrorMessage = "Por favor, informe o arquivo")]
     public string ArquivoFoto { get; set; }
+
     [Display(Name = "Descrição")]
-    [Required(ErrorMessage = "por favor, informe o arquivo")]
-    [StringLength(100)]
+    [StringLength(100, ErrorMessage = "A Descrição deve possuir no máximo 100 caracteres")]
     public string Descricao { get; set; }
 }
