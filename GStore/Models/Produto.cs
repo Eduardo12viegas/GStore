@@ -11,29 +11,34 @@ public class Produto
 
     [Required(ErrorMessage = "Por favor, informe a Categoria")]
     public int CategoriaId { get; set; }
-    [ForeignKey("CategoriaId")]
+    [ForeignKey(nameof(CategoriaId))]
     public Categoria Categoria { get; set; }
 
     [Required(ErrorMessage = "Por favor, informe o Nome")]
-    [StringLength(60, ErrorMessage = "O Nome deve possuir no máximo 60 carateres")]
+    [StringLength(60, ErrorMessage = "O Nome deve possuir no máximo 60 caracteres")]
     public string Nome { get; set; }
 
-    [Display(Name = "Descrição")]
-    [StringLength(1000, ErrorMessage = "Por favor, informe a Descrição")]
+    [Display(Name = "Descrição", Prompt = "Descrição")]
+    [StringLength(1000, ErrorMessage = "A Descrição deve possuir no máximo 1000 caracteres")]
     public string Descricao { get; set; }
 
-    [Required(ErrorMessage = "Por favor, informe a quantidade em estoque")]
-    public int QtdeEstoque { get; set; } = 0;
+    [Display(Name = "Quantidade em Estoque")]
+    [Range(0, int.MaxValue)]
+    [Required(ErrorMessage = "Por favor, informe a Quantidade em Estoque")]
+    public int QtdeEstoque { get; set; }
 
-    [Required(ErrorMessage = "Por favor, informe o valor de custo")]
+    [Display(Name = "Valor de Custo")]
+    [Range(0, double.MaxValue)]
     [Column(TypeName = "numeric(10,2)")]
     public decimal ValorCusto { get; set; }
 
-    [Required(ErrorMessage = "Por favor, informe o valor de venda")]
+    [Display(Name = "Valor de Venda")]
+    [Range(0, double.MaxValue)]
     [Column(TypeName = "numeric(10,2)")]
     public decimal ValorVenda { get; set; }
 
-    public bool Destaque { get; set; } = false;
+    public bool Destaque { get; set; }
 
     public List<ProdutoFoto> Fotos { get; set; }
+
 }

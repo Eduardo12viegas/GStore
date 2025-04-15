@@ -5,12 +5,11 @@ namespace GStore.Models;
 
 public class Usuario : IdentityUser
 {
-    [Required(ErrorMessage = "Por favor, informe o Nome")]
-    [StringLength(60, ErrorMessage = "O Nome deve possuir no máximo 60 caracteres")]
+    [Required(ErrorMessage = "Por favor, informe o nome")]
     public string Nome { get; set; }
 
-    [Display(Name = "Data de Nascimento")]
     [DataType(DataType.Date)]
+    [Display(Name = "Data de Nascimento")]
     public DateTime DataNascimento { get; set; }
 
     [StringLength(200)]
