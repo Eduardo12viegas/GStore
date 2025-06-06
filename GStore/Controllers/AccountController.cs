@@ -1,3 +1,5 @@
+using System.Net.Mail;
+using System.Security;
 using GStore.Models;
 using GStore.ViewModels;
 using Microsoft.AspNetCore.Identity;
